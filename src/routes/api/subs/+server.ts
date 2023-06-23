@@ -3,7 +3,7 @@ import type { RequestHandler } from './$types';
 
 export const POST = (async ({ request, platform }) => {
   const params = await request.formData()
-  const store = platform?.env.KV
+  const store = platform?.env.CLASH_SUBS
   const val = await store?.get("hello")
 
   if (!params.getAll("urls")) {
